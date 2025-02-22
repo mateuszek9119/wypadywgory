@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+
+  h1(class='title')= title
+
+  if err.errors !== undefined
+    each message in err.errors 
+      p=message
+
+  form( class="formAddTrip" method="post" enctype="multipart/form-data")
+    p(class="formLabelInput") 
+      label * Skąd jedziesz: 
+      input(type="text" name="cityStart" value=body.cityStart || '')
+    p(class="formLabelInput") 
+      label Miejscowości z których możesz kogoś zabrać (nie wymagane) 
+      input(type="text" name="cities" value=body.cities || '' placeholder="PODAJ NAZWY PO PRZECINKU")
+    p(class="formLabelInput") 
+      label * Miejscowości Docelowa 
+      input(type="text" name="cityEnd" value=body.cityEnd || '')
+    p(class="formLabelInput") 
+      label * Data wyjazdu:
+      input(type="date" min=minDate name="dateStartTransit" value=body.dateStartTransit || '')
+ 
+    p(class="formLabelInput") 
+      label * Data powrotu:
+      input(type="date" min=minDate name="dateReturnTransit" value=body.dateReturnTransit || '')
+
+    p(class="formLabelInput") 
+      label * Twoje imie: 
+      input(type="text" name="user" value=body.user || '')
+
+    p(class="formLabelInput") 
+      label * Dodaj zdjęcie
+      input(type="file" name="image"  value="" required)
+
+    p(class="formLabelInput") 
+      label * Kontakt (telefon, link do messenger, instagram, co wolisz)   
+      textarea(name="contact" value=body.contact || '' rows='5')
+     
+      
+    p(class="formLabelInput") 
+      label Dodatkowe informacje (pole nie wymagane)
+      textarea(name="description" value=body.description || '' rows='5')
+     
+    p(class="formSubmit") 
+      input(type="submit" value="DODAJ PRZEJAZD")

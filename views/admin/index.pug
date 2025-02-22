@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1= title
+  nav 
+    ul 
+      li
+        a(href='/admin/news/add') Dodaj
+  table 
+    tr 
+      th id
+      th Miasta
+      th Przewoźnik
+      th data dodania
+    each item, index in data
+      tr 
+        td=index 
+        td=item.cities 
+        td=item.user 
+        td=item.date
+        td
+          a(href=`/admin/news/delete/${item.id}`) Usuń

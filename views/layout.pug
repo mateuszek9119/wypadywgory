@@ -1,0 +1,25 @@
+doctype html
+
+mixin item(title, url)
+  li(class='list-item') 
+    a(href=url class= `item ${path == url ? ' active' : ''}`)=title
+
+html
+  head
+    title= title
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    
+    block startContent
+
+    nav(class="navigation")
+      ul 
+        +item('Strona Główna', '/')
+        +item('Zobacz przejazdy', '/news')
+        +item("Dodaj przejazd", "/users/news/add")  
+
+    block content
+     
+
+    

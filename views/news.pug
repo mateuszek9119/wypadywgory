@@ -1,0 +1,53 @@
+extends layout
+
+block content
+
+  form(method='get' class="searchForm")
+    input(type='text' value=search  name='search' placeholder="nazwa miejscowości")
+    input(type='submit' value='Szukaj Przejazdu')
+
+  h1(class='title')= title
+
+  div(class="article_list")
+    ul()
+      each item in data
+
+        - const fullDate = `${item.date.toLocaleDateString()}   ${item.date.toLocaleTimeString()}`
+        - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString()
+        - const fullDateReturnTransit = item.dateReturnTransit.toLocaleDateString()
+        - const cities = `${item.cityStart} -> ${item.cities.replaceAll(',' , ' -> ' )} ${item.cities ? '->':' '} ${item.cityEnd}`
+        
+        li
+          article(class="article_trip") 
+            
+            p(class="news_cities")
+              span='Trasa: '
+              =cities
+            
+            div(class='datesTrip')
+
+              div(class='news_description')
+                p
+                  span='Data wyjazdu: ' 
+                  =fullDateStartTransit
+              
+              div(class='news_description')
+                p
+                span='Data Powroru: ' 
+                =fullDateReturnTransit
+
+            div(class='news_user')
+              p(class='news_description')
+                span='Kierowca: '
+                =item.user
+              img(src=`data:image/${item.img.contentType};base64,${item.img.data.toString('base64')}` width="12%" height="auto")
+
+            p(class='news_description')
+              span='Kontakt: '
+              =item.contact
+            p(class='news_description')=item.description ? `Opis: ${item.description}`:null
+            i(class='news_dateAdd')=`Post dodano: ${fullDate}`
+      
+
+     
+      

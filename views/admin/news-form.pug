@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  h1= title
+
+  if errors.errors !== undefined
+    each message in errors.errors 
+      p=message
+
+
+  form(method = 'post')
+    p 
+      label Miejscowości przez które przejeżdzasz: *
+      input(type = 'text' name='title' value= body.cities || '')
+    p 
+      label Twoje imię: *
+      input(type = 'text' name='userName' value= body.userName || '')
+    p 
+      label Dodatkowe informacje
+      textarea(name='description' value= body.description || '')
+    p 
+      input(type = 'submit' value='Dodaj przejazd')
