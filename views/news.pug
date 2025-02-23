@@ -2,14 +2,20 @@ extends layout
 
 block content
 
-  form(method='get' class="searchForm")
+  p(class="searchDescription") Znajdź przejazdy związane z daną miejscowością:
+
+  form(method='get' class="searchForm") 
     input(type='text' value=search  name='search' placeholder="nazwa miejscowości")
     input(type='submit' value='Szukaj Przejazdu')
 
-  h1(class='title')= title
+  h1(class='title')=  `${search? title + 'przez: ' + search    : title }`
+
+  if data.length == 0
+    h1(class='title')='brak przejazdów'
 
   div(class="article_list")
     ul()
+
       each item in data
 
         - const fullDate = `${item.date.toLocaleDateString()}   ${item.date.toLocaleTimeString()}`

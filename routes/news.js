@@ -16,7 +16,8 @@ router.get('/', (req, res) => {
 
   findNews.exec()
   .then(data=>{
-    res.render('news', { title: 'PRZEJAZDY: ' , data, search, minDate})
+    console.log(search)
+    res.render('news', { title: 'WSZYSTKIE PRZEJAZDY: ' , data, search, minDate})
   })
   .catch(err=> console.log(err))
 

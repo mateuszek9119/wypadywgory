@@ -49,10 +49,22 @@ nav.navigation ul li .active{
 
 nav.navigation ul li a.active{color: #000}
 
+
+.searchDescription{
+  color:#00B7FF;
+  text-align: center;
+  margin-top: 4vh;
+
+}
+
 form.searchForm{
-  margin-top: 5vh;
+  margin-top: 2vh;
   margin-bottom: 5vh;
   text-align: center;
+}
+
+form.searchForm{
+  color:#00B7FF;
 }
 
 div.article_list{
