@@ -182,6 +182,12 @@ div.datesTrip{
 
   .article_trip img{
     margin-top: 1vh;
+    transform: scale(1);
+    transition: .5s;
+  }
+
+  .article_trip img:hover{
+    transform: scale(1.2);
   }
 
   form.formAddTrip{
