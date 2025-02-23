@@ -20,7 +20,7 @@ block content
       each item in data
 
         - const fullDate = `${item.date.toLocaleDateString()}   ${item.date.toLocaleTimeString()}`
-        - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString("en-CA")
+        - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString("en-US")
         - const fullDateReturnTransit = item.dateReturnTransit.toLocaleDateString()
         - const cities = `${item.cityStart} -> ${item.cities.replaceAll(',' , ' -> ' )} ${item.cities ? '->':' '} ${item.cityEnd}`
         
