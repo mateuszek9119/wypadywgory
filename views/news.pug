@@ -19,9 +19,9 @@ block content
 
       each item in data
 
-        - const fullDate = `${item.date.toLocaleDateString()}   ${item.date.toLocaleTimeString()}`
-        - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString("en-US")
-        - const fullDateReturnTransit = item.dateReturnTransit.toLocaleDateString()
+        - const fullDate = `${item.date.toLocaleDateString("en-GB")}  ${item.date.toLocaleTimeString()}`
+        - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString("en-GB")
+        - const fullDateReturnTransit = item.dateReturnTransit.toLocaleDateString("en-GB")
         - const cities = `${item.cityStart} -> ${item.cities.replaceAll(',' , ' -> ' )} ${item.cities ? '->':' '} ${item.cityEnd}`
         
         li
