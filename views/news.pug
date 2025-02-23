@@ -14,9 +14,10 @@ block content
     h1(class='title')='brak przejazdów'
 
   div(class="article_list")
+  
     ul()
 
-      each item in data
+        each item in data
 
         - const fullDate = `${item.date.toLocaleDateString()}   ${item.date.toLocaleTimeString()}`
         - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString()
