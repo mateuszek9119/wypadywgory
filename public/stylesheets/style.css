@@ -17,6 +17,7 @@ nav.navigation{
   top: 0;
   overflow: hidden;
   background-color: #000;
+  z-index: 10;
 }
 
 
@@ -66,12 +67,12 @@ div.article_list{
 }
 
 .article_list ul li{
-  border-bottom: 2px solid black;
+  border: 2px solid black;
 
 }
 
 .article_list li:nth-child(odd){
-  background-color:cornflowerblue;
+  background-color:slategrey;
 } 
 
 .article_list li:nth-child(even){
@@ -163,8 +164,8 @@ div.datesTrip{
   .article_list ul li{
     display:flex;
     flex-direction: column;
-    margin-bottom: 0;
     min-height: 36vh;
+    margin-bottom: 0;
   }
   
   .article_trip{
