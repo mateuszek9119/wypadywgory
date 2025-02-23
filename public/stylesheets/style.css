@@ -83,6 +83,9 @@ div.datesTrip{
   justify-content:space-evenly;
 }
 
+
+
+
 .searchForm input, .formAddTrip input[type="submit"] {
   margin: 10px;
   padding: 10px 20px;
@@ -161,7 +164,7 @@ div.datesTrip{
     display:flex;
     flex-direction: column;
     margin-bottom: 0;
-    min-height: 25vh;
+    min-height: 36vh;
   }
   
   .article_trip{
