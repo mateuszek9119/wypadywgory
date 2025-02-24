@@ -23,6 +23,8 @@ block content
         - const fullDateStartTransit = item.dateStartTransit.toLocaleDateString("en-GB")
         - const fullDateReturnTransit = item.dateReturnTransit.toLocaleDateString("en-GB")
         - const cities = `${item.cityStart} -> ${item.cities.replaceAll(',' , ' -> ' )} ${item.cities ? '->':' '} ${item.cityEnd}`
+
+     
         
         li
           article(class="article_trip") 
@@ -47,14 +49,10 @@ block content
               p(class='news_description')
                 span='Kierowca: '
                 =item.user
-              img(src=`data:image/${item.img.contentType};base64,${item.img.data.toString('base64')}` width="25%" height="auto")
-
+              img(src=`data:image/${item.img.contentType};base64,${item.img.data.toString('base64')}` width="auto" height="100vw")
+            
             p(class='news_description')
               span='Kontakt: '
               =item.contact
             p(class='news_description')=item.description ? `Opis: ${item.description}`:null
             i(class='news_dateAdd')=`Post dodano: ${fullDate}`
-      
-
-     
-      
