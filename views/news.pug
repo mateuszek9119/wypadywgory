@@ -2,6 +2,8 @@ extends layout
 
 block content
 
+  - const image = "city.png"
+
   p(class="searchDescription") Znajdź przejazdy związane z daną miejscowością:
 
   form(method='get' class="searchForm") 
@@ -42,14 +44,14 @@ block content
               
               div(class='news_description')
                 p
-                span='Data Powroru: ' 
+                span='Data Powrotu: ' 
                 =fullDateReturnTransit
 
-            div(class='news_user')
+            div(class='news_user' )
               p(class='news_description')
                 span='Kierowca: '
                 =item.user
-              img(src=`data:image/${item.img.contentType};base64,${item.img.data.toString('base64')}` width="auto" height="100vw")
+              div(class="bg"  style=`background-image: url(data:image/${item.img.contentType};base64,${item.img.data.toString('base64')});`)
             
             p(class='news_description')
               span='Kontakt: '
